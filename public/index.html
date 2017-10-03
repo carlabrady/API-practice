@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <title>Giphy API Practice</title>
+</head>
+<body ng-app="myApp">
+   <h1>Giphy API Practice</h1> 
+   
+   <section ng-controller="ApiController as AC">
+       <input type='text' placeholder="giphy search" ng-model="AC.searchIn">
+    <button ng-click="AC.getImages()">Search</button>
+    <p ng-repeat="image in AC.images"><img ng-src="{{ image.images.original.url }}"></p>
+   </section>
+</body>
+</html>

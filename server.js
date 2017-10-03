@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-
 require('dotenv').config();
+
+app.use( express.static( 'public' ) );
 
 var request = require('request');
 
