@@ -3,13 +3,16 @@ console.log( 'js' );
 // angular module
 var myApp = angular.module( 'myApp', [] );
 
+
 myApp.controller( 'ApiController', function( $http ){
     var vm = this;
+    
 
     vm.getImages = function(){
+        console.log('search parameters', vm.searchIn);
         $http({
             method: 'GET',
-            url: '/giphy'
+            url: '/giphy/' + vm.searchIn,
         }).then( function( response ){
             console.log( 'back from server call with:', response );
             vm.images=response.data.data;
