@@ -6,15 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
-    <title>Giphy API Practice</title>
+    <title>BGG API Practice</title>
 </head>
 <body ng-app="myApp">
-   <h1>Giphy API Practice</h1> 
+   <h1>BGG API Practice</h1> 
    
    <section ng-controller="ApiController as AC">
-       <input type='text' placeholder="giphy search" ng-model="AC.searchIn">
-    <button ng-click="AC.getImages()">Search</button>
-    <p ng-repeat="image in AC.images"><img ng-src="{{ image.images.original.url }}"></p>
-   </section>
+        <!-- <input type='text' placeholder="giphy search" ng-model="AC.searchIn">
+        <button ng-click="AC.getImages()">Search</button>
+        <p ng-repeat="image in AC.images"><img ng-src="{{ image.images.original.url }}"></p> -->
+   
+        <input type='text' placeholder="game search" ng-model="AC.gameIn">
+        <button ng-click="AC.getgame()">Search</button>
+        <div ng-repeat="info in AC.game.elements[0].elements">
+                <h1>{{ info.elements[7].elements[0].text }}</h1>
+                <image src="{{info.elements[10].elements[0].text}}"></image>
+                <p>Min Player: {{ info.elements[1].elements[0].text }}</p>
+                <p>Max Players: {{ info.elements[2].elements[0].text }}</p>
+        </div>
+    </section>
 </body>
 </html>

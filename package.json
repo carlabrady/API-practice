@@ -6,7 +6,11 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.16.1",
-    "request": "^2.83.0"
+    "express-accepts": "^0.1.0",
+    "install": "^0.10.1",
+    "npm": "^5.4.2",
+    "request": "^2.83.0",
+    "xml-js": "^1.5.1"
   },
   "devDependencies": {},
   "scripts": {
